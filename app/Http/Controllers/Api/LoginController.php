@@ -41,7 +41,7 @@ class LoginController extends Controller
              $is_admin = "user";
          };
 
-         $customClaims = ['role' => $is_admin, 'name' => $user->name, 'email' => $user->email];
+         $customClaims = ['role' => $is_admin, 'name' => $user->name, 'email' => $user->email, 'id' => $user->id];
         $token = JWTAuth::claims($customClaims)->attempt($credentials);
         //if auth success
         return response()->json([

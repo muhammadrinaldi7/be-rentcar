@@ -10,6 +10,21 @@ use Illuminate\Support\Facades\Validator;
 
 class CarController extends Controller
 {
+    public function getAllCars(){
+         $cars = Car::latest()->paginate(5);
+
+        return new CarResource(true, 'List Data Cars', $cars);
+    }
+    public function getReadyCars(){
+        $cars = Car::latest()->where('available', 1)->paginate(5);
+
+        return new CarResource(true, 'List Data Mobil Ready', $cars);
+    }
+    public function getBookedCars(){
+         $cars = Car::latest()->where('available', 0)->paginate(5);
+        return new CarResource(true, 'List Data Mobil Jalan', $cars);
+    }
+
     public function index(){
         $cars = Car::latest()->paginate(5);
 
@@ -99,7 +114,7 @@ class CarController extends Controller
     return new CarResource(true, 'Data Car Berhasil Diupdate', $car);
 }
 
-    public function show($id){
+     public function show($id){
         $car = Car::findOrFail($id);
         return new CarResource(true, 'Detail Data Car', $car);
     }

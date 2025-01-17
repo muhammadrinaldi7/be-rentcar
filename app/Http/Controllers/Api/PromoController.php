@@ -12,9 +12,14 @@ class PromoController extends Controller
 {
     //
     public function index(){
-        $cars = Promo::latest()->paginate(5);
+        $promos = Promo::latest()->paginate(5);
 
-        return new PromoResource(true, 'List Data Cars', $cars);
+        return new PromoResource(true, 'List Data Promos', $promos);
+    }
+    public function getPromosActive(){
+        $promo = Promo::all()->where('status', '=', 'active');
+
+        return new PromoResource(true, 'List Data Promo Active', $promo);
     }
 
     public function store(Request $request){
@@ -22,7 +27,7 @@ class PromoController extends Controller
             'code' => 'required',
             'description' => 'required',
             'discount_type' => 'required',
-            'value' => 'required',
+            'discount_value' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
             'minimum_order_value' => 'required',
@@ -33,13 +38,14 @@ class PromoController extends Controller
             return response()->json($validator->errors(), 422);
         }
         $car = Promo::create([
-            'name' => $request->name,
-            'brand' => $request->brand,
-            'model' => $request->model,
-            'year' => $request->year,
-            'price_per_day' => $request->price_per_day,
-            'available' => $request->available,
-            'image_urls' => $request->image_urls,
+            'code' => $request->code,
+            'description' => $request->description,
+            'discount_type' => $request->discount_type,
+            'discount_value' => $request->discount_value,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'minimum_order_value' => $request->minimum_order_value,
+            'maximum_order_value' => $request->maximum_order_value,
         ]);
 
         return new PromoResource(true, 'Data Car Berhasil Ditambahkan', $car);
