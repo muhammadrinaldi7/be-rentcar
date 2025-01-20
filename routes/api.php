@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Api\UploadImageController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\Api\ImageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +33,4 @@ Route::middleware(['auth:api'])->group(function () {
   Route::post('/upload-image', [UploadImageController::class, 'upload']);
   Route::get('/messages', [ChatController::class, 'index']);
   Route::post('/messages', [ChatController::class, 'store']);
+  Route::get('images/{filename}', [ImageController::class, 'show'])->where('filename', '.*');
