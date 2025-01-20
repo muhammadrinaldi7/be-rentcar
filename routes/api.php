@@ -33,4 +33,6 @@ Route::middleware(['auth:api'])->group(function () {
   Route::post('/upload-image', [UploadImageController::class, 'upload']);
   Route::get('/messages', [ChatController::class, 'index']);
   Route::post('/messages', [ChatController::class, 'store']);
-  Route::get('images/{filename}', [ImageController::class, 'show'])->where('filename', '.*');
+  Route::post('/images/upload', [ImageController::class, 'upload']);
+  Route::get('/images/{filename}', [ImageController::class, 'show'])->name('images.show');
+//   Route::get('images/{filename}', [ImageController::class, 'show'])->where('filename', '.*');
