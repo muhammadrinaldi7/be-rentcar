@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\BookingResource;
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class BookingController extends Controller
@@ -13,6 +14,10 @@ class BookingController extends Controller
      public function index(){
         $Booking = Booking::latest()->paginate(5);
 
+        return new BookingResource(true, 'List Data Booking', $Booking);
+    }
+    public function myBooking(){
+        $Booking = Booking::where('user_id', Auth::user()->id)->get();
         return new BookingResource(true, 'List Data Booking', $Booking);
     }
     public function show($id){

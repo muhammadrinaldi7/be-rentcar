@@ -20,6 +20,7 @@ Route::middleware(['auth:api'])->group(function () {
   Route::apiResource('/users', UserController::class);
     Route::apiResource('/cars', CarController::class);  
     Route::apiResource('/bookings', BookingController::class);
+    Route::get('/my-booking', [BookingController::class, 'myBooking']);
     Route::apiResource('/promos', PromoController::class);
   });
   // Cars
