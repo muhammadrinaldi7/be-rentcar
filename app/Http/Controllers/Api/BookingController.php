@@ -17,7 +17,7 @@ class BookingController extends Controller
         return new BookingResource(true, 'List Data Booking', $Booking);
     }
     public function myBooking(){
-        $Booking = Booking::where('user_id', Auth::user()->id)->get();
+        $Booking = Booking::with('car')->where('user_id', Auth::user()->id)->get();
         return new BookingResource(true, 'List Data Booking', $Booking);
     }
     public function show($id){
