@@ -17,7 +17,7 @@ class PromoController extends Controller
         return new PromoResource(true, 'List Data Promos', $promos);
     }
     public function getPromosActive(){
-        $promo = Promo::all()->where('status', '=', 'active');
+        $promo = Promo::all()->where('status', '=', 'active')->where('start_date', '<=', now())->where('end_date', '>=', now());
 
         return new PromoResource(true, 'List Data Promo Active', $promo);
     }
@@ -30,8 +30,6 @@ class PromoController extends Controller
             'discount_value' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
-            'minimum_order_value' => 'required',
-            'maximum_order_value' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -44,8 +42,6 @@ class PromoController extends Controller
             'discount_value' => $request->discount_value,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
-            'minimum_order_value' => $request->minimum_order_value,
-            'maximum_order_value' => $request->maximum_order_value,
         ]);
 
         return new PromoResource(true, 'Data Car Berhasil Ditambahkan', $car);

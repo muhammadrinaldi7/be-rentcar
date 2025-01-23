@@ -22,6 +22,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::apiResource('/bookings', BookingController::class);
     Route::get('/my-booking', [BookingController::class, 'myBooking']);
     Route::apiResource('/promos', PromoController::class);
+    Route::post('/apply-promo', [BookingController::class, 'applyPromo']);
   });
   // Cars
   Route::get('/get-all-cars', [CarController::class, 'getAllCars']);

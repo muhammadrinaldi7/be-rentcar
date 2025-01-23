@@ -19,8 +19,6 @@ return new class extends Migration
             $table->decimal('discount_value', 10, 2); // Value of the discount
             $table->date('start_date'); // Discount start date
             $table->date('end_date'); // Discount end date
-            $table->decimal('minimum_order_value', 10, 2)->nullable(); // Minimum order value for the discount
-            $table->decimal('max_discount_value', 10, 2)->nullable(); // Maximum discount value
             $table->enum('status', ['active', 'expired'])->default('active'); // Status of the discount
             $table->timestamps(); // created_at and updated_at
         });

@@ -38,7 +38,7 @@ class LoginController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Password Anda salah'
-            ], 401);
+            ], 406);
         }
          $user = Auth::user();
         if ($user->is_admin == 1) {
@@ -54,6 +54,6 @@ class LoginController extends Controller
         return response()->json([
             'success' => true,   
             'token'   => $token   
-        ], 200);
+        ], 202);
     }
 }
