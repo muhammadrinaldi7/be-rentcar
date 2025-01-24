@@ -13,7 +13,7 @@ class UploadImageController extends Controller
      public function upload(Request $request)
     {
           $request->validate([
-            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi untuk multiple files
+            'images[].*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi untuk multiple files
         ]);
 
         $urls = [];
@@ -23,9 +23,9 @@ class UploadImageController extends Controller
             $fileName = time() . '-' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $file->getClientOriginalExtension();
 
             $filePath = $file->storeAs('images', $fileName, 'public');
-
+            
             // Generate URL untuk file yang diupload
-            $url = Storage::url($filePath);
+            $url = url('api/images/' . $fileName);
             $urls[] = asset($url);  // Menyimpan URL ke dalam array
         }
 

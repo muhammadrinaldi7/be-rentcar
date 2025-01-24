@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\UploadImageController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\Api\ImageController;
+use App\Http\Controllers\Api\PaymentMethodController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::get('/my-booking', [BookingController::class, 'myBooking']);
     Route::apiResource('/promos', PromoController::class);
     Route::post('/apply-promo', [BookingController::class, 'applyPromo']);
+    Route::apiResource('/payment-methods', PaymentMethodController::class);
   });
   // Cars
   Route::get('/get-all-cars', [CarController::class, 'getAllCars']);
