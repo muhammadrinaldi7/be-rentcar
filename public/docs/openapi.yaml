@@ -1,0 +1,1962 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/users:
+    post:
+      summary: ''
+      operationId: postApiUsers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: ab
+                  nullable: false
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: oceane97@example.net
+                  nullable: false
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: 'e+b@Ct{^D&8JJTb3lFe'
+                  nullable: false
+                is_admin:
+                  type: string
+                  description: ''
+                  example: ratione
+                  nullable: false
+              required:
+                - name
+                - email
+                - password
+                - is_admin
+      security: []
+    get:
+      summary: 'Get all users.'
+      operationId: getAllUsers
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n  \"success\": true,\n  \"message\": \"List Data Users\",\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"John Doe\",\n      \"email\": \"johndoe@me.com\",\n      \"is_admin\": 1,\n      \"created_at\": \"2020-01-01T00:00:00.000000Z\",\n      \"updated_at\": \"2020-01-01T00:00:00.000000Z\"\n    },\n]\n}"
+      tags:
+        - Users
+      security: []
+  '/api/users/{id}':
+    get:
+      summary: ''
+      operationId: getApiUsersId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiUsersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiUsersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: porro
+        required: true
+        schema:
+          type: string
+  /api/cars:
+    get:
+      summary: ''
+      operationId: getApiCars
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiCars
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: ad
+                  nullable: false
+                brand:
+                  type: string
+                  description: ''
+                  example: culpa
+                  nullable: false
+                model:
+                  type: string
+                  description: ''
+                  example: blanditiis
+                  nullable: false
+                fuel:
+                  type: string
+                  description: ''
+                  example: ratione
+                  nullable: false
+                capacity:
+                  type: string
+                  description: ''
+                  example: consectetur
+                  nullable: false
+                transmission:
+                  type: string
+                  description: ''
+                  example: saepe
+                  nullable: false
+                year:
+                  type: string
+                  description: ''
+                  example: et
+                  nullable: false
+                price_per_day:
+                  type: string
+                  description: ''
+                  example: iusto
+                  nullable: false
+                available:
+                  type: string
+                  description: ''
+                  example: maxime
+                  nullable: false
+                image_urls:
+                  type: array
+                  description: 'Must be a valid URL.'
+                  example:
+                    - 'http://www.hudson.com/commodi-beatae-et-nemo-dolorem-saepe'
+                  items:
+                    type: string
+              required:
+                - name
+                - brand
+                - model
+                - fuel
+                - capacity
+                - transmission
+                - year
+                - price_per_day
+                - available
+      security: []
+  '/api/cars/{id}':
+    get:
+      summary: ''
+      operationId: getApiCarsId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiCarsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: accusantium
+                  nullable: false
+                brand:
+                  type: string
+                  description: ''
+                  example: dolores
+                  nullable: false
+                model:
+                  type: string
+                  description: ''
+                  example: quisquam
+                  nullable: false
+                fuel:
+                  type: string
+                  description: ''
+                  example: nisi
+                  nullable: false
+                capacity:
+                  type: string
+                  description: ''
+                  example: qui
+                  nullable: false
+                transmission:
+                  type: string
+                  description: ''
+                  example: nam
+                  nullable: false
+                year:
+                  type: string
+                  description: ''
+                  example: quis
+                  nullable: false
+                price_per_day:
+                  type: string
+                  description: ''
+                  example: dolorum
+                  nullable: false
+                available:
+                  type: string
+                  description: ''
+                  example: hic
+                  nullable: false
+                image_urls:
+                  type: array
+                  description: 'Optional, bisa null atau array. Must be a valid URL.'
+                  example:
+                    - 'http://www.lubowitz.info/fugiat-ea-et-omnis-vitae-perferendis'
+                  items:
+                    type: string
+                    nullable: true
+              required:
+                - name
+                - brand
+                - model
+                - fuel
+                - capacity
+                - transmission
+                - year
+                - price_per_day
+                - available
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiCarsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the car.'
+        example: veritatis
+        required: true
+        schema:
+          type: string
+  /api/bookings:
+    get:
+      summary: ''
+      operationId: getApiBookings
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiBookings
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                car_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the cars table.'
+                  example: velit
+                  nullable: false
+                promo_code:
+                  type: string
+                  description: 'The <code>code</code> of an existing record in the promos table.'
+                  example: null
+                  nullable: true
+                start_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2025-01-25T09:01:56'
+                  nullable: false
+                end_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+                  example: '2120-03-12'
+                  nullable: false
+              required:
+                - car_id
+                - start_date
+                - end_date
+      security: []
+  '/api/bookings/{id}':
+    get:
+      summary: ''
+      operationId: getApiBookingsId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the booking.'
+        example: molestias
+        required: true
+        schema:
+          type: string
+  /api/my-booking:
+    get:
+      summary: ''
+      operationId: getApiMyBooking
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/promos:
+    get:
+      summary: ''
+      operationId: getApiPromos
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiPromos
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                  nullable: false
+                description:
+                  type: string
+                  description: ''
+                  example: quaerat
+                  nullable: false
+                discount_type:
+                  type: string
+                  description: ''
+                  example: aspernatur
+                  nullable: false
+                discount_value:
+                  type: string
+                  description: ''
+                  example: officia
+                  nullable: false
+                start_date:
+                  type: string
+                  description: ''
+                  example: delectus
+                  nullable: false
+                end_date:
+                  type: string
+                  description: ''
+                  example: rerum
+                  nullable: false
+              required:
+                - code
+                - description
+                - discount_type
+                - discount_value
+                - start_date
+                - end_date
+      security: []
+  /api/apply-promo:
+    post:
+      summary: ''
+      operationId: postApiApplyPromo
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                promo_code:
+                  type: string
+                  description: 'The <code>code</code> of an existing record in the promos table.'
+                  example: omnis
+                  nullable: false
+                total_price:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 3
+                  nullable: false
+              required:
+                - promo_code
+                - total_price
+      security: []
+  /api/payment-methods:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: labore
+                  nullable: false
+                description:
+                  type: string
+                  description: ''
+                  example: 'Culpa occaecati at blanditiis alias.'
+                  nullable: false
+                image_url:
+                  type: string
+                  description: 'Must be a valid URL.'
+                  example: 'http://simonis.com/magni-perspiciatis-eaque-placeat-autem'
+                  nullable: false
+              required:
+                - name
+                - description
+                - image_url
+      security: []
+  '/api/payment-methods/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the payment method.'
+        example: ducimus
+        required: true
+        schema:
+          type: string
+  /api/get-all-cars:
+    get:
+      summary: ''
+      operationId: getApiGetAllCars
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'List Data Cars'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 13
+                        name: Calya
+                        brand: Toyota
+                        model: 'Family Car'
+                        fuel: 4
+                        capacity: 6
+                        transmission: Automatic
+                        year: '2021'
+                        price_per_day: 350000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706965-calya.png'
+                        created_at: '2025-01-24T08:22:48.000000Z'
+                        updated_at: '2025-01-24T08:22:48.000000Z'
+                      -
+                        id: 12
+                        name: 'Avanza Veloz'
+                        brand: Toyota
+                        model: 'Family Car'
+                        fuel: 3
+                        capacity: 8
+                        transmission: Manual
+                        year: '2023'
+                        price_per_day: 400000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706869-avanzaveloz.png'
+                        created_at: '2025-01-24T08:21:11.000000Z'
+                        updated_at: '2025-01-24T08:21:11.000000Z'
+                      -
+                        id: 11
+                        name: 'Innova Zenix'
+                        brand: Toyota
+                        model: SUV
+                        fuel: 7
+                        capacity: 8
+                        transmission: Automatic
+                        year: '2023'
+                        price_per_day: 500000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706764-innovazenix.png'
+                        created_at: '2025-01-24T08:19:26.000000Z'
+                        updated_at: '2025-01-24T08:19:26.000000Z'
+                      -
+                        id: 10
+                        name: Mobilio
+                        brand: Honda
+                        model: 'Family Car'
+                        fuel: 3
+                        capacity: 6
+                        transmission: Manual
+                        year: '2018'
+                        price_per_day: 400000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706533-mobilio.png'
+                        created_at: '2025-01-24T08:15:36.000000Z'
+                        updated_at: '2025-01-24T08:15:36.000000Z'
+                      -
+                        id: 9
+                        name: 'Civic Type R'
+                        brand: Honda
+                        model: Sport
+                        fuel: 5
+                        capacity: 4
+                        transmission: Automatic
+                        year: '2022'
+                        price_per_day: 500000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706437-civictypr.png'
+                        created_at: '2025-01-24T08:14:00.000000Z'
+                        updated_at: '2025-01-24T08:14:00.000000Z'
+                    first_page_url: 'http://localhost/api/get-all-cars?page=1'
+                    from: 1
+                    last_page: 2
+                    last_page_url: 'http://localhost/api/get-all-cars?page=2'
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/get-all-cars?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost/api/get-all-cars?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost/api/get-all-cars?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    next_page_url: 'http://localhost/api/get-all-cars?page=2'
+                    path: 'http://localhost/api/get-all-cars'
+                    per_page: 5
+                    prev_page_url: null
+                    to: 5
+                    total: 8
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'List Data Cars'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 13
+                            name: Calya
+                            brand: Toyota
+                            model: 'Family Car'
+                            fuel: 4
+                            capacity: 6
+                            transmission: Automatic
+                            year: '2021'
+                            price_per_day: 350000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706965-calya.png'
+                            created_at: '2025-01-24T08:22:48.000000Z'
+                            updated_at: '2025-01-24T08:22:48.000000Z'
+                          -
+                            id: 12
+                            name: 'Avanza Veloz'
+                            brand: Toyota
+                            model: 'Family Car'
+                            fuel: 3
+                            capacity: 8
+                            transmission: Manual
+                            year: '2023'
+                            price_per_day: 400000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706869-avanzaveloz.png'
+                            created_at: '2025-01-24T08:21:11.000000Z'
+                            updated_at: '2025-01-24T08:21:11.000000Z'
+                          -
+                            id: 11
+                            name: 'Innova Zenix'
+                            brand: Toyota
+                            model: SUV
+                            fuel: 7
+                            capacity: 8
+                            transmission: Automatic
+                            year: '2023'
+                            price_per_day: 500000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706764-innovazenix.png'
+                            created_at: '2025-01-24T08:19:26.000000Z'
+                            updated_at: '2025-01-24T08:19:26.000000Z'
+                          -
+                            id: 10
+                            name: Mobilio
+                            brand: Honda
+                            model: 'Family Car'
+                            fuel: 3
+                            capacity: 6
+                            transmission: Manual
+                            year: '2018'
+                            price_per_day: 400000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706533-mobilio.png'
+                            created_at: '2025-01-24T08:15:36.000000Z'
+                            updated_at: '2025-01-24T08:15:36.000000Z'
+                          -
+                            id: 9
+                            name: 'Civic Type R'
+                            brand: Honda
+                            model: Sport
+                            fuel: 5
+                            capacity: 4
+                            transmission: Automatic
+                            year: '2022'
+                            price_per_day: 500000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706437-civictypr.png'
+                            created_at: '2025-01-24T08:14:00.000000Z'
+                            updated_at: '2025-01-24T08:14:00.000000Z'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 13
+                            name:
+                              type: string
+                              example: Calya
+                            brand:
+                              type: string
+                              example: Toyota
+                            model:
+                              type: string
+                              example: 'Family Car'
+                            fuel:
+                              type: integer
+                              example: 4
+                            capacity:
+                              type: integer
+                              example: 6
+                            transmission:
+                              type: string
+                              example: Automatic
+                            year:
+                              type: string
+                              example: '2021'
+                            price_per_day:
+                              type: integer
+                              example: 350000
+                            available:
+                              type: integer
+                              example: 1
+                            image_urls:
+                              type: array
+                              example:
+                                - 'http://127.0.0.1:8000/api/images/1737706965-calya.png'
+                              items:
+                                type: string
+                            created_at:
+                              type: string
+                              example: '2025-01-24T08:22:48.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2025-01-24T08:22:48.000000Z'
+                      first_page_url:
+                        type: string
+                        example: 'http://localhost/api/get-all-cars?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 2
+                      last_page_url:
+                        type: string
+                        example: 'http://localhost/api/get-all-cars?page=2'
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/get-all-cars?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost/api/get-all-cars?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost/api/get-all-cars?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      next_page_url:
+                        type: string
+                        example: 'http://localhost/api/get-all-cars?page=2'
+                      path:
+                        type: string
+                        example: 'http://localhost/api/get-all-cars'
+                      per_page:
+                        type: integer
+                        example: 5
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 5
+                      total:
+                        type: integer
+                        example: 8
+      tags:
+        - Endpoints
+      security: []
+  /api/get-ready-cars:
+    get:
+      summary: ''
+      operationId: getApiGetReadyCars
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'List Data Mobil Ready'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 13
+                        name: Calya
+                        brand: Toyota
+                        model: 'Family Car'
+                        fuel: 4
+                        capacity: 6
+                        transmission: Automatic
+                        year: '2021'
+                        price_per_day: 350000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706965-calya.png'
+                        created_at: '2025-01-24T08:22:48.000000Z'
+                        updated_at: '2025-01-24T08:22:48.000000Z'
+                      -
+                        id: 12
+                        name: 'Avanza Veloz'
+                        brand: Toyota
+                        model: 'Family Car'
+                        fuel: 3
+                        capacity: 8
+                        transmission: Manual
+                        year: '2023'
+                        price_per_day: 400000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706869-avanzaveloz.png'
+                        created_at: '2025-01-24T08:21:11.000000Z'
+                        updated_at: '2025-01-24T08:21:11.000000Z'
+                      -
+                        id: 11
+                        name: 'Innova Zenix'
+                        brand: Toyota
+                        model: SUV
+                        fuel: 7
+                        capacity: 8
+                        transmission: Automatic
+                        year: '2023'
+                        price_per_day: 500000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706764-innovazenix.png'
+                        created_at: '2025-01-24T08:19:26.000000Z'
+                        updated_at: '2025-01-24T08:19:26.000000Z'
+                      -
+                        id: 10
+                        name: Mobilio
+                        brand: Honda
+                        model: 'Family Car'
+                        fuel: 3
+                        capacity: 6
+                        transmission: Manual
+                        year: '2018'
+                        price_per_day: 400000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706533-mobilio.png'
+                        created_at: '2025-01-24T08:15:36.000000Z'
+                        updated_at: '2025-01-24T08:15:36.000000Z'
+                      -
+                        id: 9
+                        name: 'Civic Type R'
+                        brand: Honda
+                        model: Sport
+                        fuel: 5
+                        capacity: 4
+                        transmission: Automatic
+                        year: '2022'
+                        price_per_day: 500000
+                        available: 1
+                        image_urls:
+                          - 'http://127.0.0.1:8000/api/images/1737706437-civictypr.png'
+                        created_at: '2025-01-24T08:14:00.000000Z'
+                        updated_at: '2025-01-24T08:14:00.000000Z'
+                    first_page_url: 'http://localhost/api/get-ready-cars?page=1'
+                    from: 1
+                    last_page: 2
+                    last_page_url: 'http://localhost/api/get-ready-cars?page=2'
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/get-ready-cars?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost/api/get-ready-cars?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost/api/get-ready-cars?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    next_page_url: 'http://localhost/api/get-ready-cars?page=2'
+                    path: 'http://localhost/api/get-ready-cars'
+                    per_page: 5
+                    prev_page_url: null
+                    to: 5
+                    total: 7
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'List Data Mobil Ready'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 13
+                            name: Calya
+                            brand: Toyota
+                            model: 'Family Car'
+                            fuel: 4
+                            capacity: 6
+                            transmission: Automatic
+                            year: '2021'
+                            price_per_day: 350000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706965-calya.png'
+                            created_at: '2025-01-24T08:22:48.000000Z'
+                            updated_at: '2025-01-24T08:22:48.000000Z'
+                          -
+                            id: 12
+                            name: 'Avanza Veloz'
+                            brand: Toyota
+                            model: 'Family Car'
+                            fuel: 3
+                            capacity: 8
+                            transmission: Manual
+                            year: '2023'
+                            price_per_day: 400000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706869-avanzaveloz.png'
+                            created_at: '2025-01-24T08:21:11.000000Z'
+                            updated_at: '2025-01-24T08:21:11.000000Z'
+                          -
+                            id: 11
+                            name: 'Innova Zenix'
+                            brand: Toyota
+                            model: SUV
+                            fuel: 7
+                            capacity: 8
+                            transmission: Automatic
+                            year: '2023'
+                            price_per_day: 500000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706764-innovazenix.png'
+                            created_at: '2025-01-24T08:19:26.000000Z'
+                            updated_at: '2025-01-24T08:19:26.000000Z'
+                          -
+                            id: 10
+                            name: Mobilio
+                            brand: Honda
+                            model: 'Family Car'
+                            fuel: 3
+                            capacity: 6
+                            transmission: Manual
+                            year: '2018'
+                            price_per_day: 400000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706533-mobilio.png'
+                            created_at: '2025-01-24T08:15:36.000000Z'
+                            updated_at: '2025-01-24T08:15:36.000000Z'
+                          -
+                            id: 9
+                            name: 'Civic Type R'
+                            brand: Honda
+                            model: Sport
+                            fuel: 5
+                            capacity: 4
+                            transmission: Automatic
+                            year: '2022'
+                            price_per_day: 500000
+                            available: 1
+                            image_urls:
+                              - 'http://127.0.0.1:8000/api/images/1737706437-civictypr.png'
+                            created_at: '2025-01-24T08:14:00.000000Z'
+                            updated_at: '2025-01-24T08:14:00.000000Z'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 13
+                            name:
+                              type: string
+                              example: Calya
+                            brand:
+                              type: string
+                              example: Toyota
+                            model:
+                              type: string
+                              example: 'Family Car'
+                            fuel:
+                              type: integer
+                              example: 4
+                            capacity:
+                              type: integer
+                              example: 6
+                            transmission:
+                              type: string
+                              example: Automatic
+                            year:
+                              type: string
+                              example: '2021'
+                            price_per_day:
+                              type: integer
+                              example: 350000
+                            available:
+                              type: integer
+                              example: 1
+                            image_urls:
+                              type: array
+                              example:
+                                - 'http://127.0.0.1:8000/api/images/1737706965-calya.png'
+                              items:
+                                type: string
+                            created_at:
+                              type: string
+                              example: '2025-01-24T08:22:48.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2025-01-24T08:22:48.000000Z'
+                      first_page_url:
+                        type: string
+                        example: 'http://localhost/api/get-ready-cars?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 2
+                      last_page_url:
+                        type: string
+                        example: 'http://localhost/api/get-ready-cars?page=2'
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/get-ready-cars?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost/api/get-ready-cars?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost/api/get-ready-cars?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      next_page_url:
+                        type: string
+                        example: 'http://localhost/api/get-ready-cars?page=2'
+                      path:
+                        type: string
+                        example: 'http://localhost/api/get-ready-cars'
+                      per_page:
+                        type: integer
+                        example: 5
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 5
+                      total:
+                        type: integer
+                        example: 7
+      tags:
+        - Endpoints
+      security: []
+  /api/get-booked-cars:
+    get:
+      summary: ''
+      operationId: getApiGetBookedCars
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'List Data Mobil Jalan'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 7
+                        name: Xenia
+                        brand: Daihatsu
+                        model: 'Family Car'
+                        fuel: 4
+                        capacity: 6
+                        transmission: Manual
+                        year: '2016'
+                        price_per_day: 350000
+                        available: 0
+                        image_urls:
+                          - 'http://127.0.0.1:8000/storage/images/1736920405-all-new-xenia-2022-2566345038.png'
+                        created_at: '2025-01-15T05:53:32.000000Z'
+                        updated_at: '2025-01-15T05:53:32.000000Z'
+                    first_page_url: 'http://localhost/api/get-booked-cars?page=1'
+                    from: 1
+                    last_page: 1
+                    last_page_url: 'http://localhost/api/get-booked-cars?page=1'
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/get-booked-cars?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    next_page_url: null
+                    path: 'http://localhost/api/get-booked-cars'
+                    per_page: 5
+                    prev_page_url: null
+                    to: 1
+                    total: 1
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'List Data Mobil Jalan'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 7
+                            name: Xenia
+                            brand: Daihatsu
+                            model: 'Family Car'
+                            fuel: 4
+                            capacity: 6
+                            transmission: Manual
+                            year: '2016'
+                            price_per_day: 350000
+                            available: 0
+                            image_urls:
+                              - 'http://127.0.0.1:8000/storage/images/1736920405-all-new-xenia-2022-2566345038.png'
+                            created_at: '2025-01-15T05:53:32.000000Z'
+                            updated_at: '2025-01-15T05:53:32.000000Z'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 7
+                            name:
+                              type: string
+                              example: Xenia
+                            brand:
+                              type: string
+                              example: Daihatsu
+                            model:
+                              type: string
+                              example: 'Family Car'
+                            fuel:
+                              type: integer
+                              example: 4
+                            capacity:
+                              type: integer
+                              example: 6
+                            transmission:
+                              type: string
+                              example: Manual
+                            year:
+                              type: string
+                              example: '2016'
+                            price_per_day:
+                              type: integer
+                              example: 350000
+                            available:
+                              type: integer
+                              example: 0
+                            image_urls:
+                              type: array
+                              example:
+                                - 'http://127.0.0.1:8000/storage/images/1736920405-all-new-xenia-2022-2566345038.png'
+                              items:
+                                type: string
+                            created_at:
+                              type: string
+                              example: '2025-01-15T05:53:32.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2025-01-15T05:53:32.000000Z'
+                      first_page_url:
+                        type: string
+                        example: 'http://localhost/api/get-booked-cars?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      last_page_url:
+                        type: string
+                        example: 'http://localhost/api/get-booked-cars?page=1'
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/get-booked-cars?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      next_page_url:
+                        type: string
+                        example: null
+                      path:
+                        type: string
+                        example: 'http://localhost/api/get-booked-cars'
+                      per_page:
+                        type: integer
+                        example: 5
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 1
+                      total:
+                        type: integer
+                        example: 1
+      tags:
+        - Endpoints
+      security: []
+  /api/get-active-promos:
+    get:
+      summary: ''
+      operationId: getApiGetActivePromos
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'List Data Promo Active'
+                  data:
+                    -
+                      id: 1
+                      code: HAPPY50
+                      description: 'Discount 50%'
+                      discount_type: '%'
+                      discount_value: 50
+                      start_date: '2025-01-01'
+                      end_date: '2025-01-30'
+                      status: active
+                      created_at: '2025-01-22T07:37:35.000000Z'
+                      updated_at: '2025-01-22T07:37:35.000000Z'
+                    -
+                      id: 2
+                      code: POTONG100
+                      description: 'Potongan 100rb'
+                      discount_type: fixed
+                      discount_value: 100000
+                      start_date: '2025-01-01'
+                      end_date: '2025-01-30'
+                      status: active
+                      created_at: '2025-01-22T07:38:05.000000Z'
+                      updated_at: '2025-01-22T07:38:05.000000Z'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'List Data Promo Active'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        code: HAPPY50
+                        description: 'Discount 50%'
+                        discount_type: '%'
+                        discount_value: 50
+                        start_date: '2025-01-01'
+                        end_date: '2025-01-30'
+                        status: active
+                        created_at: '2025-01-22T07:37:35.000000Z'
+                        updated_at: '2025-01-22T07:37:35.000000Z'
+                      -
+                        id: 2
+                        code: POTONG100
+                        description: 'Potongan 100rb'
+                        discount_type: fixed
+                        discount_value: 100000
+                        start_date: '2025-01-01'
+                        end_date: '2025-01-30'
+                        status: active
+                        created_at: '2025-01-22T07:38:05.000000Z'
+                        updated_at: '2025-01-22T07:38:05.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        code:
+                          type: string
+                          example: HAPPY50
+                        description:
+                          type: string
+                          example: 'Discount 50%'
+                        discount_type:
+                          type: string
+                          example: '%'
+                        discount_value:
+                          type: integer
+                          example: 50
+                        start_date:
+                          type: string
+                          example: '2025-01-01'
+                        end_date:
+                          type: string
+                          example: '2025-01-30'
+                        status:
+                          type: string
+                          example: active
+                        created_at:
+                          type: string
+                          example: '2025-01-22T07:37:35.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2025-01-22T07:37:35.000000Z'
+      tags:
+        - Endpoints
+      security: []
+  /api/register:
+    post:
+      summary: 'Handle the incoming request.'
+      operationId: handleTheIncomingRequest
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: magni
+                  nullable: false
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: adolfo.toy@example.org
+                  nullable: false
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: O1PLOE/H\zcLuF
+                  nullable: false
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/login:
+    post:
+      summary: 'Handle the incoming request.'
+      operationId: handleTheIncomingRequest
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: saepe
+                  nullable: false
+                password:
+                  type: string
+                  description: ''
+                  example: et
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+  /api/upload-image:
+    post:
+      summary: ''
+      operationId: postApiUploadImage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                'images[]':
+                  type: array
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  items:
+                    type: string
+                    format: binary
+              required:
+                - 'images[]'
+      security: []
+  /api/messages:
+    get:
+      summary: ''
+      operationId: getApiMessages
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 5
+                    user_id: 1
+                    content: 'Hello from Postman!'
+                    created_at: '2025-01-02T06:16:29.000000Z'
+                    updated_at: '2025-01-02T06:16:29.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 6
+                    user_id: 1
+                    content: asda
+                    created_at: '2025-01-02T06:48:31.000000Z'
+                    updated_at: '2025-01-02T06:48:31.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 7
+                    user_id: 1
+                    content: tes
+                    created_at: '2025-01-02T06:48:43.000000Z'
+                    updated_at: '2025-01-02T06:48:43.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 8
+                    user_id: 1
+                    content: Haii
+                    created_at: '2025-01-02T06:48:50.000000Z'
+                    updated_at: '2025-01-02T06:48:50.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 9
+                    user_id: 1
+                    content: asda
+                    created_at: '2025-01-02T06:49:14.000000Z'
+                    updated_at: '2025-01-02T06:49:14.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 10
+                    user_id: 1
+                    content: asd
+                    created_at: '2025-01-02T06:57:42.000000Z'
+                    updated_at: '2025-01-02T06:57:42.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 11
+                    user_id: 1
+                    content: qwqq
+                    created_at: '2025-01-02T06:57:46.000000Z'
+                    updated_at: '2025-01-02T06:57:46.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 12
+                    user_id: 1
+                    content: asd
+                    created_at: '2025-01-02T06:59:30.000000Z'
+                    updated_at: '2025-01-02T06:59:30.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 13
+                    user_id: 1
+                    content: asd
+                    created_at: '2025-01-02T06:59:37.000000Z'
+                    updated_at: '2025-01-02T06:59:37.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 14
+                    user_id: 1
+                    content: dede
+                    created_at: '2025-01-02T06:59:42.000000Z'
+                    updated_at: '2025-01-02T06:59:42.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 15
+                    user_id: 1
+                    content: ad
+                    created_at: '2025-01-02T07:00:39.000000Z'
+                    updated_at: '2025-01-02T07:00:39.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 16
+                    user_id: 1
+                    content: as
+                    created_at: '2025-01-02T07:04:16.000000Z'
+                    updated_at: '2025-01-02T07:04:16.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 17
+                    user_id: 2
+                    content: ad
+                    created_at: '2025-01-02T07:07:20.000000Z'
+                    updated_at: '2025-01-02T07:07:20.000000Z'
+                    user:
+                      id: 2
+                      name: 'Muhammad Rinaldi'
+                  -
+                    id: 18
+                    user_id: 1
+                    content: 1aasd
+                    created_at: '2025-01-02T07:07:41.000000Z'
+                    updated_at: '2025-01-02T07:07:41.000000Z'
+                    user:
+                      id: 1
+                      name: 'Muhammad Kamil'
+                  -
+                    id: 19
+                    user_id: 2
+                    content: qw
+                    created_at: '2025-01-02T07:07:57.000000Z'
+                    updated_at: '2025-01-02T07:07:57.000000Z'
+                    user:
+                      id: 2
+                      name: 'Muhammad Rinaldi'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiMessages
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  description: ''
+                  example: totam
+                  nullable: false
+                user_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the users table.'
+                  example: qui
+                  nullable: false
+              required:
+                - content
+                - user_id
+      security: []
+  /api/images/upload:
+    post:
+      summary: 'Upload multiple images and return accessible URLs.'
+      operationId: uploadMultipleImagesAndReturnAccessibleURLs
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                'images[]':
+                  type: array
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  items:
+                    type: string
+                    format: binary
+              required:
+                - 'images[]'
+      security: []
+  '/api/images/{filename}':
+    get:
+      summary: 'Serve image files from storage.'
+      operationId: serveImageFilesFromStorage
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Image not found'
+                properties:
+                  message:
+                    type: string
+                    example: 'Image not found'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: filename
+        description: ''
+        example: cupiditate
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: Users
+    description: ''

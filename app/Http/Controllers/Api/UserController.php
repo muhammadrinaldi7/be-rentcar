@@ -16,6 +16,26 @@ class UserController extends Controller
      *
      * @return void
      */
+    /**
+     * Get all users.
+     * 
+     * @group Users
+     * 
+     * @response 200 {
+     *   "success": true,
+     *   "message": "List Data Users",
+     *   "data": [
+     *     {
+     *       "id": 1,
+     *       "name": "John Doe",
+     *       "email": "johndoe@me.com",
+     *       "is_admin": 1,
+     *       "created_at": "2020-01-01T00:00:00.000000Z",
+     *       "updated_at": "2020-01-01T00:00:00.000000Z"
+     *     },
+     * ]
+     * }
+     */
     public function index()
     {
         //get all posts
@@ -24,6 +44,7 @@ class UserController extends Controller
         //return collection of posts as a resource
         return new UserResource(true, 'List Data Users', $user);
     }
+
     public function store(Request $request){
        $validator = Validator::make($request->all(), [
            'name' => 'required',

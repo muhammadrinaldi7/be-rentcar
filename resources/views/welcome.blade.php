@@ -33,7 +33,17 @@
 
                     <main class="mt-6">
                         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                    
+                            <div class="rounded-lg p-4 bg-white">
+                                <div class="flex items-center justify-between">
+                                    <p class="text-sm font-medium text-black dark:text-white/70">
+                                        API Documentation
+                                    </p>
+
+                                    <a href="/docs" class="text-sm font-medium text-[#FF2D20] hover:underline">
+                                        Read the docs <span aria-hidden="true">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </main>
 

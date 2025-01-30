@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Validator;
 
 class CarController extends Controller
 {
-    public function getAllCars(){
-         $cars = Car::latest()->paginate(5);
+    public function getAllCars(Request $request){
+        $perPage = $request->input('perPage', 5);
+        $cars = Car::latest()->paginate($perPage);
 
         return new CarResource(true, 'List Data Cars', $cars);
     }

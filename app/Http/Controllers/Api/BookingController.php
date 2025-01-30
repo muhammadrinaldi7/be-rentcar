@@ -24,20 +24,64 @@ class BookingController extends Controller
         return new BookingResource(true, 'List Data Booking', $Booking);
     }
     public function show($id){
-        $Booking = Booking::findOrFail($id);
-        return new BookingResource(true, 'Detail Data Booking', $Booking);
+          $booking = Booking::find($id);
+
+    // Cek apakah booking ditemukan
+    if (!$booking) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Booking not found',
+        ], 404);
+    }
+    
+
+    // Jika booking ditemukan, kembalikan data booking
+    return new BookingResource(true, 'Success', $booking);
+    }
+    public function toPayment($id) {
+        $booking = Booking::with('car')->find($id);
+        $booking->makeHidden(['created_at', 'updated_at', 'user_id', 'car_id']);        
+
+        // Cek apakah booking ditemukan
+        if (!$booking) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Booking not found',
+            ], 404);
+        }
+         $startDate = Carbon::parse($booking->start_date);
+        $endDate = Carbon::parse($booking->end_date);
+        $duration = $startDate->diffInDays($endDate); // Menghitung selisih hari
+
+    // Menyembunyikan field yang tidak diinginkan
+    $booking->makeHidden(['created_at', 'updated_at', 'user_id', 'car_id']);
+
+    // Membuat array untuk respons
+    $responseData = $booking->toArray(); // Mengonversi model ke array
+    $responseData['duration'] = $duration; // Menambahkan durasi ke array
+
+
+    // Jika booking ditemukan, kembalikan data booking
+    return new BookingResource(true, 'Success', $responseData);
     }
    public function store(Request $request){
     // Validasi Input
-    $validator = Validator::make($request->all(), [
-        'car_id' => 'required|exists:cars,id',
-        'promo_code' => 'nullable|exists:promos,code',
-        'start_date' => 'required|date',
-        'end_date' => 'required|date|after_or_equal:start_date',
-    ]);
+        $validator = Validator::make($request->all(), [
+            'car_id' => 'required|exists:cars,id',
+            'promo_code' => 'nullable|exists:promos,code',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date',
+        ]);
 
     if ($validator->fails()) {
-        return response()->json($validator->errors(), 422);
+    // Mengambil semua pesan kesalahan
+    $errors = $validator->errors()->all();
+    
+    // Menggabungkan pesan kesalahan menjadi satu string
+    $errorMessage = implode(', ', $errors);
+    
+    // Mengembalikan respons JSON dengan format yang diinginkan
+    return response()->json(['message' => $errorMessage], 422);
     }
     $car = Car::findOrFail($request->car_id);
     // Default nilai untuk diskon dan harga final
@@ -58,7 +102,7 @@ class BookingController extends Controller
             ->first();
 
         if (!$promo) {
-            return response()->json(['error' => 'Promo code is invalid or expired.'], 400);
+            return response()->json(['message' => 'Promo code is invalid or expired.'], 400);
         }
 
         // Hitung diskon (misalnya dalam persen atau nominal langsung)
@@ -74,7 +118,7 @@ class BookingController extends Controller
     }
 
     // Simpan booking
-    $booking = Booking::create([
+    $booking = Booking::with('car')->create([
         'user_id' => Auth::user()->id,
         'car_id' => $request->car_id,
         'promo_code' => $request->promo_code,
@@ -85,7 +129,8 @@ class BookingController extends Controller
         'final_price' => $finalPrice,
         'status' => 'pending',
     ]);
-
+    $booking->load('car')->makeHidden(['created_at', 'updated_at', 'user_id', 'car_id']);
+    
     return new BookingResource(true, 'Data Booking Berhasil Ditambahkan', $booking);
 }
 

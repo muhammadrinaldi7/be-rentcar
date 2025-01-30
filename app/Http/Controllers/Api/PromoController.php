@@ -17,8 +17,8 @@ class PromoController extends Controller
         return new PromoResource(true, 'List Data Promos', $promos);
     }
     public function getPromosActive(){
-        $promo = Promo::all()->where('status', '=', 'active')->where('start_date', '<=', now())->where('end_date', '>=', now());
-
+        $promo = Promo::where('status', '=', 'active')->where('start_date', '<=', now())->where('end_date', '>=', now())->get();
+    
         return new PromoResource(true, 'List Data Promo Active', $promo);
     }
 

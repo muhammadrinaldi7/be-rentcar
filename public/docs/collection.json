@@ -1,0 +1,1449 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "234d3269-b1de-4675-b452-f3a31c71e964",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"ab\",\"email\":\"oceane97@example.net\",\"password\":\"e+b@Ct{^D&8JJTb3lFe\",\"is_admin\":\"ratione\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "porro",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT api\/users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "sit",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "in",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/cars",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cars",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cars"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/cars",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cars",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cars"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"ad\",\"brand\":\"culpa\",\"model\":\"blanditiis\",\"fuel\":\"ratione\",\"capacity\":\"consectetur\",\"transmission\":\"saepe\",\"year\":\"et\",\"price_per_day\":\"iusto\",\"available\":\"maxime\",\"image_urls\":[\"http:\\\/\\\/www.hudson.com\\\/commodi-beatae-et-nemo-dolorem-saepe\"]}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/cars\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cars\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cars\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "veritatis",
+                                    "description": "The ID of the car."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT api\/cars\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cars\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cars\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "ut",
+                                    "description": "The ID of the car."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"accusantium\",\"brand\":\"dolores\",\"model\":\"quisquam\",\"fuel\":\"nisi\",\"capacity\":\"qui\",\"transmission\":\"nam\",\"year\":\"quis\",\"price_per_day\":\"dolorum\",\"available\":\"hic\",\"image_urls\":[\"http:\\\/\\\/www.lubowitz.info\\\/fugiat-ea-et-omnis-vitae-perferendis\"]}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/cars\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cars\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cars\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "autem",
+                                    "description": "The ID of the car."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/bookings",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bookings",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bookings"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/bookings",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bookings",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bookings"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"car_id\":\"velit\",\"start_date\":\"2025-01-25T09:01:56\",\"end_date\":\"2120-03-12\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/bookings\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bookings\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bookings\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "molestias",
+                                    "description": "The ID of the booking."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/my-booking",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/my-booking",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/my-booking"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/promos",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/promos",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/promos"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/promos",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/promos",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/promos"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"code\":\"voluptatem\",\"description\":\"quaerat\",\"discount_type\":\"aspernatur\",\"discount_value\":\"officia\",\"start_date\":\"delectus\",\"end_date\":\"rerum\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/apply-promo",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/apply-promo",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/apply-promo"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"promo_code\":\"omnis\",\"total_price\":3}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/payment-methods",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/payment-methods"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/payment-methods",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/payment-methods"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"labore\",\"description\":\"Culpa occaecati at blanditiis alias.\",\"image_url\":\"http:\\\/\\\/simonis.com\\\/magni-perspiciatis-eaque-placeat-autem\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/payment-methods\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/payment-methods\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "ducimus",
+                                    "description": "The ID of the payment method."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/payment-methods\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/payment-methods\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "rerum",
+                                    "description": "The ID of the payment method."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/payment-methods\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/payment-methods\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "quia",
+                                    "description": "The ID of the payment method."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/get-all-cars",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/get-all-cars",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/get-all-cars"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"message\":\"List Data Cars\",\"data\":{\"current_page\":1,\"data\":[{\"id\":13,\"name\":\"Calya\",\"brand\":\"Toyota\",\"model\":\"Family Car\",\"fuel\":4,\"capacity\":6,\"transmission\":\"Automatic\",\"year\":\"2021\",\"price_per_day\":350000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706965-calya.png\"],\"created_at\":\"2025-01-24T08:22:48.000000Z\",\"updated_at\":\"2025-01-24T08:22:48.000000Z\"},{\"id\":12,\"name\":\"Avanza Veloz\",\"brand\":\"Toyota\",\"model\":\"Family Car\",\"fuel\":3,\"capacity\":8,\"transmission\":\"Manual\",\"year\":\"2023\",\"price_per_day\":400000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706869-avanzaveloz.png\"],\"created_at\":\"2025-01-24T08:21:11.000000Z\",\"updated_at\":\"2025-01-24T08:21:11.000000Z\"},{\"id\":11,\"name\":\"Innova Zenix\",\"brand\":\"Toyota\",\"model\":\"SUV\",\"fuel\":7,\"capacity\":8,\"transmission\":\"Automatic\",\"year\":\"2023\",\"price_per_day\":500000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706764-innovazenix.png\"],\"created_at\":\"2025-01-24T08:19:26.000000Z\",\"updated_at\":\"2025-01-24T08:19:26.000000Z\"},{\"id\":10,\"name\":\"Mobilio\",\"brand\":\"Honda\",\"model\":\"Family Car\",\"fuel\":3,\"capacity\":6,\"transmission\":\"Manual\",\"year\":\"2018\",\"price_per_day\":400000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706533-mobilio.png\"],\"created_at\":\"2025-01-24T08:15:36.000000Z\",\"updated_at\":\"2025-01-24T08:15:36.000000Z\"},{\"id\":9,\"name\":\"Civic Type R\",\"brand\":\"Honda\",\"model\":\"Sport\",\"fuel\":5,\"capacity\":4,\"transmission\":\"Automatic\",\"year\":\"2022\",\"price_per_day\":500000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706437-civictypr.png\"],\"created_at\":\"2025-01-24T08:14:00.000000Z\",\"updated_at\":\"2025-01-24T08:14:00.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/get-all-cars?page=1\",\"from\":1,\"last_page\":2,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/get-all-cars?page=2\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/get-all-cars?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/get-all-cars?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/get-all-cars?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/get-all-cars?page=2\",\"path\":\"http:\\\/\\\/localhost\\\/api\\\/get-all-cars\",\"per_page\":5,\"prev_page_url\":null,\"to\":5,\"total\":8}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/get-ready-cars",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/get-ready-cars",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/get-ready-cars"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"message\":\"List Data Mobil Ready\",\"data\":{\"current_page\":1,\"data\":[{\"id\":13,\"name\":\"Calya\",\"brand\":\"Toyota\",\"model\":\"Family Car\",\"fuel\":4,\"capacity\":6,\"transmission\":\"Automatic\",\"year\":\"2021\",\"price_per_day\":350000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706965-calya.png\"],\"created_at\":\"2025-01-24T08:22:48.000000Z\",\"updated_at\":\"2025-01-24T08:22:48.000000Z\"},{\"id\":12,\"name\":\"Avanza Veloz\",\"brand\":\"Toyota\",\"model\":\"Family Car\",\"fuel\":3,\"capacity\":8,\"transmission\":\"Manual\",\"year\":\"2023\",\"price_per_day\":400000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706869-avanzaveloz.png\"],\"created_at\":\"2025-01-24T08:21:11.000000Z\",\"updated_at\":\"2025-01-24T08:21:11.000000Z\"},{\"id\":11,\"name\":\"Innova Zenix\",\"brand\":\"Toyota\",\"model\":\"SUV\",\"fuel\":7,\"capacity\":8,\"transmission\":\"Automatic\",\"year\":\"2023\",\"price_per_day\":500000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706764-innovazenix.png\"],\"created_at\":\"2025-01-24T08:19:26.000000Z\",\"updated_at\":\"2025-01-24T08:19:26.000000Z\"},{\"id\":10,\"name\":\"Mobilio\",\"brand\":\"Honda\",\"model\":\"Family Car\",\"fuel\":3,\"capacity\":6,\"transmission\":\"Manual\",\"year\":\"2018\",\"price_per_day\":400000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706533-mobilio.png\"],\"created_at\":\"2025-01-24T08:15:36.000000Z\",\"updated_at\":\"2025-01-24T08:15:36.000000Z\"},{\"id\":9,\"name\":\"Civic Type R\",\"brand\":\"Honda\",\"model\":\"Sport\",\"fuel\":5,\"capacity\":4,\"transmission\":\"Automatic\",\"year\":\"2022\",\"price_per_day\":500000,\"available\":1,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/images\\\/1737706437-civictypr.png\"],\"created_at\":\"2025-01-24T08:14:00.000000Z\",\"updated_at\":\"2025-01-24T08:14:00.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/get-ready-cars?page=1\",\"from\":1,\"last_page\":2,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/get-ready-cars?page=2\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/get-ready-cars?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/get-ready-cars?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/get-ready-cars?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/get-ready-cars?page=2\",\"path\":\"http:\\\/\\\/localhost\\\/api\\\/get-ready-cars\",\"per_page\":5,\"prev_page_url\":null,\"to\":5,\"total\":7}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/get-booked-cars",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/get-booked-cars",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/get-booked-cars"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"message\":\"List Data Mobil Jalan\",\"data\":{\"current_page\":1,\"data\":[{\"id\":7,\"name\":\"Xenia\",\"brand\":\"Daihatsu\",\"model\":\"Family Car\",\"fuel\":4,\"capacity\":6,\"transmission\":\"Manual\",\"year\":\"2016\",\"price_per_day\":350000,\"available\":0,\"image_urls\":[\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/images\\\/1736920405-all-new-xenia-2022-2566345038.png\"],\"created_at\":\"2025-01-15T05:53:32.000000Z\",\"updated_at\":\"2025-01-15T05:53:32.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/get-booked-cars?page=1\",\"from\":1,\"last_page\":1,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/get-booked-cars?page=1\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/get-booked-cars?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":null,\"path\":\"http:\\\/\\\/localhost\\\/api\\\/get-booked-cars\",\"per_page\":5,\"prev_page_url\":null,\"to\":1,\"total\":1}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/get-active-promos",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/get-active-promos",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/get-active-promos"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"message\":\"List Data Promo Active\",\"data\":[{\"id\":1,\"code\":\"HAPPY50\",\"description\":\"Discount 50%\",\"discount_type\":\"%\",\"discount_value\":50,\"start_date\":\"2025-01-01\",\"end_date\":\"2025-01-30\",\"status\":\"active\",\"created_at\":\"2025-01-22T07:37:35.000000Z\",\"updated_at\":\"2025-01-22T07:37:35.000000Z\"},{\"id\":2,\"code\":\"POTONG100\",\"description\":\"Potongan 100rb\",\"discount_type\":\"fixed\",\"discount_value\":100000,\"start_date\":\"2025-01-01\",\"end_date\":\"2025-01-30\",\"status\":\"active\",\"created_at\":\"2025-01-22T07:38:05.000000Z\",\"updated_at\":\"2025-01-22T07:38:05.000000Z\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Handle the incoming request.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"magni\",\"email\":\"adolfo.toy@example.org\",\"password\":\"O1PLOE\\\/H\\\\zcLuF\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Handle the incoming request.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"saepe\",\"password\":\"et\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/upload-image",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/upload-image",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/upload-image"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "images[][]",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/messages",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/messages",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/messages"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "[{\"id\":5,\"user_id\":1,\"content\":\"Hello from Postman!\",\"created_at\":\"2025-01-02T06:16:29.000000Z\",\"updated_at\":\"2025-01-02T06:16:29.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":6,\"user_id\":1,\"content\":\"asda\",\"created_at\":\"2025-01-02T06:48:31.000000Z\",\"updated_at\":\"2025-01-02T06:48:31.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":7,\"user_id\":1,\"content\":\"tes\",\"created_at\":\"2025-01-02T06:48:43.000000Z\",\"updated_at\":\"2025-01-02T06:48:43.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":8,\"user_id\":1,\"content\":\"Haii\",\"created_at\":\"2025-01-02T06:48:50.000000Z\",\"updated_at\":\"2025-01-02T06:48:50.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":9,\"user_id\":1,\"content\":\"asda\",\"created_at\":\"2025-01-02T06:49:14.000000Z\",\"updated_at\":\"2025-01-02T06:49:14.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":10,\"user_id\":1,\"content\":\"asd\",\"created_at\":\"2025-01-02T06:57:42.000000Z\",\"updated_at\":\"2025-01-02T06:57:42.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":11,\"user_id\":1,\"content\":\"qwqq\",\"created_at\":\"2025-01-02T06:57:46.000000Z\",\"updated_at\":\"2025-01-02T06:57:46.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":12,\"user_id\":1,\"content\":\"asd\",\"created_at\":\"2025-01-02T06:59:30.000000Z\",\"updated_at\":\"2025-01-02T06:59:30.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":13,\"user_id\":1,\"content\":\"asd\",\"created_at\":\"2025-01-02T06:59:37.000000Z\",\"updated_at\":\"2025-01-02T06:59:37.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":14,\"user_id\":1,\"content\":\"dede\",\"created_at\":\"2025-01-02T06:59:42.000000Z\",\"updated_at\":\"2025-01-02T06:59:42.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":15,\"user_id\":1,\"content\":\"ad\",\"created_at\":\"2025-01-02T07:00:39.000000Z\",\"updated_at\":\"2025-01-02T07:00:39.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":16,\"user_id\":1,\"content\":\"as\",\"created_at\":\"2025-01-02T07:04:16.000000Z\",\"updated_at\":\"2025-01-02T07:04:16.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":17,\"user_id\":2,\"content\":\"ad\",\"created_at\":\"2025-01-02T07:07:20.000000Z\",\"updated_at\":\"2025-01-02T07:07:20.000000Z\",\"user\":{\"id\":2,\"name\":\"Muhammad Rinaldi\"}},{\"id\":18,\"user_id\":1,\"content\":\"1aasd\",\"created_at\":\"2025-01-02T07:07:41.000000Z\",\"updated_at\":\"2025-01-02T07:07:41.000000Z\",\"user\":{\"id\":1,\"name\":\"Muhammad Kamil\"}},{\"id\":19,\"user_id\":2,\"content\":\"qw\",\"created_at\":\"2025-01-02T07:07:57.000000Z\",\"updated_at\":\"2025-01-02T07:07:57.000000Z\",\"user\":{\"id\":2,\"name\":\"Muhammad Rinaldi\"}}]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/messages",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/messages",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/messages"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"content\":\"totam\",\"user_id\":\"qui\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Upload multiple images and return accessible URLs.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/images\/upload",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/images\/upload"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "images[][]",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Serve image files from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/images\/:filename",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/images\/:filename",
+                            "variable": [
+                                {
+                                    "id": "filename",
+                                    "key": "filename",
+                                    "value": "cupiditate",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Image not found\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get all users.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"success\": true,\n  \"message\": \"List Data Users\",\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"John Doe\",\n      \"email\": \"johndoe@me.com\",\n      \"is_admin\": 1,\n      \"created_at\": \"2020-01-01T00:00:00.000000Z\",\n      \"updated_at\": \"2020-01-01T00:00:00.000000Z\"\n    },\n]\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
