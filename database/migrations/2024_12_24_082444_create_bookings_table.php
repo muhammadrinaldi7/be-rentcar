@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('car_id')->constrained('cars')->onDelete('cascade');
             $table->string('promo_code')->nullable();
+            $table->string('external_id')->nullable();
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->integer('total_price');

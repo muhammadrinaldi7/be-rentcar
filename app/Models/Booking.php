@@ -15,6 +15,7 @@ class Booking extends Model
         'end_date',
         'total_price',
         'discount_applied',
+        'external_id',
         'final_price',
         'status',
     ];
