@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\ImageController;
 use App\Http\Controllers\Api\MidtransController;
 use App\Http\Controllers\Api\PaymentMethodController;
 use App\Models\Booking;
+use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Xendit\Configuration;
@@ -71,7 +72,16 @@ Route::post('/xendit/webhook', function (Request $request) {
     if ($invoiceCallback->getStatus() == 'PAID') {
         // Update status pembayaran di database
         $externalId = $invoiceCallback->getExternalId();
-         Booking::where('external_id', $externalId)->update(['status' => 'paid']);
+        //  Booking::where('external_id', $externalId)->update(['status' => 'paid']);
+        $booking = Booking::where('external_id', $externalId)->first();
+
+    if ($booking) {
+        // Ubah status booking menjadi "paid"
+        $booking->update(['status' => 'paid']);
+
+        // Update status ketersediaan mobil (car) menjadi tidak tersedia (available = 0)
+        Car::where('id', $booking->car_id)->update(['available' => 0]);
+    }
     }
 
     // Kirim respons ke Xendit

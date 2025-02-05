@@ -129,6 +129,7 @@ class BookingController extends Controller
         'final_price' => $finalPrice,
         'status' => 'pending',
     ]);
+   
     $booking->load('car')->makeHidden(['created_at', 'updated_at', 'user_id', 'car_id']);
     
     return new BookingResource(true, 'Data Booking Berhasil Ditambahkan', $booking);

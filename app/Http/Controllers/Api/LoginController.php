@@ -27,7 +27,7 @@ class LoginController extends Controller
 
         //get credentials from request
         $credentials = $request->only('email', 'password');
-        if(User::all()->where('email', $credentials['email'])->isEmpty()){
+        if(!User::where('email', $credentials['email'])->exists()){
              return response()->json([
                 'success' => false,
                 'message' => 'Email tidak terdaftar'
@@ -41,13 +41,9 @@ class LoginController extends Controller
             ], 406);
         }
          $user = Auth::user();
-        if ($user->is_admin == 1) {
-             $is_admin = "admin";
-         }else{
-             $is_admin = "user";
-         };
+         $role = $user->is_admin ? "admin" : "user";
 
-         $customClaims = ['role' => $is_admin, 'name' => $user->name, 'email' => $user->email, 'id' => $user->id];
+         $customClaims = ['role' => $role, 'name' => $user->name, 'email' => $user->email, 'id' => $user->id];
         $token = JWTAuth::claims($customClaims)->attempt($credentials);
 
         //if auth success
