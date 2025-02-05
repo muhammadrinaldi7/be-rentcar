@@ -51,7 +51,9 @@ Route::middleware(['auth:api'])->group(function () {
     // Cek apakah mobil yang berelasi dengan booking masih tersedia
     $car = Car::find($booking->car_id);
     if (!$car || $car->available == 0) {
-        return response()->json(['error' => 'Car is not available'], 400);
+        return response()->json([
+            'message' => 'Car is not available',
+            'available' => $car->available], 400);
     }
     // Inisialisasi InvoiceApi
     $invoiceApi = new InvoiceApi();
@@ -61,6 +63,7 @@ Route::middleware(['auth:api'])->group(function () {
         'external_id' => 'invoice-' . time(),
         'description' => 'Pembayaran Rental Mobil',
         'amount' => $price,
+        'car_available' => $car->available,
     ];
     try {
         // Membuat invoice
