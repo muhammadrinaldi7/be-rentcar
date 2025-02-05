@@ -51,8 +51,7 @@ Route::middleware(['auth:api'])->group(function () {
     // Cek apakah mobil yang berelasi dengan booking masih tersedia
     $car = Car::find($booking->car_id);
     if (!$car || $car->available == 0) {
-    
-        return response()->json(['error' => 'Mobil tidak tersedia'], 400)->isRedirect('/not-available');
+        return response()->json(['error' => 'Car is not available'], 400);
     }
     // Inisialisasi InvoiceApi
     $invoiceApi = new InvoiceApi();
