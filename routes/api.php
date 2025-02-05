@@ -41,17 +41,27 @@ Route::middleware(['auth:api'])->group(function () {
  Route::post('/xendit/create-invoice', function (Request $request) {
     // Set API Key
     Configuration::setXenditKey(env('XENDIT_SECRET_KEY'));
+     $booking = Booking::find($request->id);
 
+    // Cek apakah booking ditemukan
+    if (!$booking) {
+        return response()->json(['error' => 'Booking not found'], 404);
+    }
+
+    // Cek apakah mobil yang berelasi dengan booking masih tersedia
+    $car = Car::find($booking->car_id);
+    if (!$car || $car->available == 0) {
+        return response()->json(['error' => 'Car is not available'], 400);
+    }
     // Inisialisasi InvoiceApi
     $invoiceApi = new InvoiceApi();
-    $price = Booking::find($request->id)->final_price;
+    $price = $booking->final_price;
     // Parameter untuk membuat invoice
     $params = [
         'external_id' => 'invoice-' . time(),
         'description' => 'Pembayaran Rental Mobil',
         'amount' => $price,
     ];
-
     try {
         // Membuat invoice
         $invoice = $invoiceApi->createInvoice($params);
